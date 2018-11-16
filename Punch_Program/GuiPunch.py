@@ -19,6 +19,7 @@ import tkinter as tk
 from tkinter import ttk
 import traceback
 import time
+import random
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import requests
@@ -189,6 +190,10 @@ with open('Account.log', 'r') as user:
 	passID = account[1]
 	pathID = account[2]
 try:
+	# Version 2 : add timer to control Punch timing and not repeat the same time 
+	# Author: PPPy
+	buffer = random.randint(30,180)
+	time.sleep(buffer)
 	user = userID
 	pass_v = passID
 	path = pathID
